@@ -1,0 +1,56 @@
+:root {
+  --cream: #faf6f0;
+  --warm-white: #fffdf9;
+  --espresso: #2c1a0e;
+  --caramel: #c8813a;
+  --caramel-light: #e9a75a;
+  --sage: #7a9e7e;
+  --blush: #e8c4b0;
+  --text: #2c1a0e;
+  --text-muted: #7a6a5a;
+  --border: #e8ddd0;
+  --card-shadow: 0 4px 24px rgba(44,26,14,0.08);
+  --navbar-h: 70px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+.app main {
+  padding-top: var(--navbar-h);
+  min-height: 100vh;
+}
+
+button {
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+}
+
+input, select, textarea {
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.fade-up { animation: fadeUp 0.4s ease forwards; }
+.fade-in { animation: fadeIn 0.3s ease forwards; }

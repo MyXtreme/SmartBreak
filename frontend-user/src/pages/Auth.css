@@ -1,0 +1,88 @@
+.auth-page {
+  min-height: calc(100vh - var(--navbar-h));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--cream) 0%, var(--blush) 100%);
+  padding: 2rem;
+}
+.auth-card {
+  background: white;
+  border-radius: 24px;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 440px;
+  box-shadow: 0 12px 48px rgba(44,26,14,0.12);
+}
+.auth-header { text-align: center; margin-bottom: 1.5rem; }
+.auth-logo {
+  text-decoration: none;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: var(--espresso);
+  font-weight: 700;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+.auth-header h2 { font-size: 1.8rem; color: var(--espresso); margin-bottom: 0.4rem; }
+.auth-header p { color: var(--text-muted); font-size: 0.95rem; }
+
+.mode-toggle {
+  display: flex;
+  background: var(--cream);
+  border-radius: 12px;
+  padding: 4px;
+  margin-bottom: 1.5rem;
+}
+.mode-toggle button {
+  flex: 1;
+  background: none;
+  border: none;
+  padding: 0.6rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: all 0.2s;
+}
+.mode-toggle button.active { background: white; color: var(--espresso); box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+.auth-form { display: flex; flex-direction: column; gap: 1rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.form-group label { font-size: 0.85rem; font-weight: 600; color: var(--espresso); }
+.form-group input {
+  padding: 0.75rem 1rem;
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  font-size: 0.95rem;
+  color: var(--espresso);
+  background: var(--cream);
+  transition: border 0.2s;
+  outline: none;
+}
+.form-group input:focus { border-color: var(--caramel); background: white; }
+
+.auth-error {
+  background: #fef0f0;
+  border: 1px solid #f5c6c6;
+  color: #c0392b;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  font-size: 0.88rem;
+}
+
+.auth-submit {
+  background: var(--espresso);
+  color: white;
+  border: none;
+  padding: 0.85rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  transition: all 0.2s;
+}
+.auth-submit:hover:not(:disabled) { background: var(--caramel); }
+.auth-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.auth-note { text-align: center; font-size: 0.8rem; color: var(--text-muted); margin-top: 1rem; }

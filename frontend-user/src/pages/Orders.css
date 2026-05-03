@@ -1,0 +1,38 @@
+.orders-page { padding: 2rem; max-width: 800px; margin: 0 auto; }
+.orders-container h1 { font-size: 2rem; margin-bottom: 2rem; color: var(--espresso); }
+
+.no-orders { text-align: center; padding: 4rem; }
+.no-orders span { font-size: 3rem; display: block; margin-bottom: 1rem; }
+.no-orders p { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 1.5rem; }
+.no-orders button { background: var(--caramel); color: white; border: none; padding: 0.75rem 2rem; border-radius: 12px; font-size: 0.95rem; font-weight: 600; }
+
+.orders-list { display: flex; flex-direction: column; gap: 1.25rem; }
+
+.order-card {
+  background: white; border-radius: 18px; padding: 1.5rem;
+  box-shadow: var(--card-shadow); border: 1px solid var(--border);
+}
+.order-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; gap: 1rem; flex-wrap: wrap; }
+.order-id { font-weight: 700; color: var(--espresso); display: block; font-size: 1rem; }
+.order-date { font-size: 0.8rem; color: var(--text-muted); }
+.order-status {
+  padding: 0.35rem 0.85rem; border-radius: 20px;
+  font-size: 0.85rem; font-weight: 600; white-space: nowrap;
+}
+
+.order-items { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 0.75rem 0; margin-bottom: 0.75rem; }
+.order-item-row { display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem; padding: 0.2rem 0; color: var(--text); gap: 1rem; }
+.order-item-row span:first-child { flex: 1; }
+.order-item-row span:nth-child(2) { color: var(--text-muted); }
+.order-item-row span:last-child { font-weight: 600; }
+
+.order-footer { display: flex; justify-content: space-between; align-items: center; }
+.pickup-tag { font-size: 0.85rem; color: var(--text-muted); background: var(--cream); padding: 0.3rem 0.7rem; border-radius: 8px; }
+.order-total { font-size: 1.1rem; font-weight: 700; color: var(--espresso); font-family: 'Playfair Display', serif; }
+
+.ready-banner {
+  margin-top: 1rem; background: #eafaf1; border: 1.5px solid #a9dfbf;
+  color: #27ae60; padding: 0.75rem 1rem; border-radius: 12px;
+  font-size: 0.9rem; font-weight: 600; text-align: center;
+  animation: pulse 2s ease infinite;
+}
