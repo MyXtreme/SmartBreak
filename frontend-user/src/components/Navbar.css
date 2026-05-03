@@ -1,0 +1,120 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--navbar-h);
+  background: var(--warm-white);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  z-index: 100;
+  gap: 2rem;
+  box-shadow: 0 2px 12px rgba(44,26,14,0.06);
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+}
+.brand-icon { font-size: 1.5rem; }
+.brand-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--espresso);
+  letter-spacing: -0.02em;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 0.25rem;
+  flex: 1;
+}
+.nav-link {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+.nav-link:hover, .nav-link.active {
+  background: var(--blush);
+  color: var(--espresso);
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cart-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--caramel);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 24px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+.cart-btn:hover { background: var(--espresso); transform: translateY(-1px); }
+.cart-icon { font-size: 1rem; }
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: #e05252;
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.user-greeting {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+.logout-btn {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 0.4rem 0.9rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+.logout-btn:hover { border-color: var(--caramel); color: var(--caramel); }
+
+.login-btn {
+  text-decoration: none;
+  background: var(--espresso);
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 24px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+.login-btn:hover { background: var(--caramel); }

@@ -1,26 +1,32 @@
-# main part 
 from fastapi import FastAPI
-from routers import users, menu, orders, deliveries
-from database import engine, Base
 from fastapi.middleware.cors import CORSMiddleware
-#we create tables in database
-Base.metadata.create_all(bind=engine) 
-#we create app
-app=FastAPI(title="SmartBreak API", version="1.0.0")
-#we give permission to the connet the fornted
+from contextlib import asynccontextmanager
+import uvicorn
+from database import init_db
+from routers import auth, menu, orders, admin
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    await init_db()
+    yield
+
+app = FastAPI(title="SmartBreak API", lifespan=lifespan)
+
+# Allow all origins so both deployed frontends (Vercel etc.) can reach the API.
+# Credentials cannot be used with allow_origins=["*"], so the frontends
+# send the JWT in the Authorization header instead (already the case).
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
-    allow_credentials=True,
+    allow_origins=["*"],
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-#we include our accounts
-app.include_router(users.router)
-app.include_router(menu.router)
-app.include_router(orders.router)
-app.include_router(deliveries.router)
 
-@app.get("/")
-def health():
-    return {"status":" API running"}
+app.include_router(auth.router, prefix="/api/auth", tags=["auth"])
+app.include_router(menu.router, prefix="/api/menu", tags=["menu"])
+app.include_router(orders.router, prefix="/api/orders", tags=["orders"])
+app.include_router(admin.router, prefix="/api/admin", tags=["admin"])
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
